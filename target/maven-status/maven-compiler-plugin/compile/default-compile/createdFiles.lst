@@ -1,0 +1,5 @@
+WordCount$FormatAsTextFn.class
+WordCount.class
+WordCount$GenericOptions.class
+WordCount$CountWords.class
+WordCount$ExtractWordsFn.class
