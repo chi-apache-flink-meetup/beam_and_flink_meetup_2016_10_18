@@ -111,18 +111,6 @@ public class WordCount {
     GenericOptions genericOptions = PipelineOptionsFactory.fromArgs(args).withValidation().as(GenericOptions.class);
     Pipeline p;
     p = Pipeline.create(genericOptions);
-/*
-    if (args.toString().contains("SparkRunner")){
-      SparkOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(SparkOptions.class);
-      options.setRunner(options.getRunner()); //FlinkRunner.class);
-      p = Pipeline.create(options);
-    } else {
-      FlinkOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(FlinkOptions.class);
-      options.setRunner(options.getRunner()); //FlinkRunner.class);
-      p = Pipeline.create(options);
-    }
-*/
-
 
     p.apply("ReadLines", TextIO.Read.from(genericOptions.getInput()))
         .apply(new CountWords())
